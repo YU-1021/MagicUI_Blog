@@ -59,8 +59,7 @@ export default function RootLayout({
         <script defer src="https://umami.2x.nz/script.js" data-website-id="5d710dbd-3a2e-43e3-a553-97b415090c63"></script>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <SiteNav />

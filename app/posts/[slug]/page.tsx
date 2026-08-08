@@ -63,8 +63,8 @@ export default async function BlogPost({ params }: PageProps) {
 
   const MDX = page.data.body;
   const cover = getCover(page.data);
-  // page.path 是相对 content/ 的文件名，如 csp.mdx
-  const editUrl = `${siteConfig.repo}/edit/${siteConfig.repoBranch}/content/${page.path}`;
+  // 文末「在 GitHub 上查看此文章」跳转到对应的源文件
+  const editUrl = `https://github.com/YU-1021/MagicUI_Blog/edit/main/content/${page.path}`;
   const date = new Date(page.data.date);
   const formattedDate = formatDate(date);
 
@@ -123,13 +123,13 @@ export default async function BlogPost({ params }: PageProps) {
         <div className="absolute max-w-7xl mx-auto left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] lg:w-full h-full border-x border-border p-0 pointer-events-none" />
         <main className="w-full p-0 overflow-hidden">
           {cover && (
-            <div className="relative w-full h-[500px] overflow-hidden object-cover border border-transparent">
+            <div className="relative w-full h-[500px] border border-transparent">
               <Image
                 src={cover}
                 alt={page.data.title}
                 fill
                 unoptimized
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>
